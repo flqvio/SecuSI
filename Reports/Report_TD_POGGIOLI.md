@@ -84,7 +84,35 @@ $ sqlmap -h
 
 ## Metasploit
 
-
-
-
 [TryHackMe Metasploit](https://tryhackme.com/room/metasploitintro)
+
+Metasploit is the most widely used exploitation framework. Metasploit is a powerful tool that can support all phases of a penetration testing test.
+
+It comes with 2 versions, the free version and the pro version. The pro version is a paid version that offers GUI interface and facilitates the automation of tasks.
+
+This tool allows information gathering, scanning, exploitation, exploit development, post-exploitation, and more.
+
+Main modules :
+- Auxiliary
+- Encoders
+- Evasion
+- Exploits
+- NOPs
+- Payloads
+- Post
+
+The exploitation process comprises three main steps; finding the exploit, customizing the exploit, and exploiting the vulnerable service.
+
+Metasploit provides many modules that you can use for each step of the exploitation process. 
+
+You can search exploits with the command "search" and the name of the exploit you want to find. All exploits are ranked based on their reliability.
+
+![picture 0](../images/adfcc055cbc063fe44d2dd8a99358b9a2f18de6c4241179e869cdcb008104130.png)  
+
+Source : [Metasploit Github - Exploit Ranking](https://github.com/rapid7/metasploit-framework/wiki/Exploit-Ranking)
+
+For more information and documentation, visit the [Metasploit website](https://www.metasploit.com/) or use Metasploit console in the terminal with the command (after installation):
+
+```bash
+$ msfconsole
+```
