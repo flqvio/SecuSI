@@ -58,14 +58,33 @@ The feature Site Map allows you to see a tree structure of the website you are t
 
 A browser based on Chromium is also provided with full support of the proxy to use it without any of the modifications we just had to do.
 
+For more information and documentation, visit the [Burp website](https://portswigger.net/burp).
 
 ## SQLmap
 
 [TryHackMe SQLmap](https://tryhackme.com/room/sqlmap)
 
+SQLmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over database servers. 
+It comes with a powerful detection engine to accessing the underlying file system and executing commands on the operating system via out-of-band connections.
 
+Main features :
+- Detection of SQL injection vulnerabilities
+- Management of the database server
+- Batch testing
+- WAF bypass
+- Proxy support
+
+This tool comes with a lot of options to test our target, beginning with easy options like "--dbs" to enumerate the databases, and step by step, a lot of more difficult options to exploit the SQL injection.
+
+For more information and documentation, visit the [SQLmap website](http://sqlmap.org/) or in the terminal with the command:
+
+```bash
+$ sqlmap -h
+```
 
 ## Metasploit
+
+
 
 
 [TryHackMe Metasploit](https://tryhackme.com/room/metasploitintro)
