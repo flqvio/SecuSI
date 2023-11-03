@@ -4,14 +4,11 @@
 
   - [Report Labs / Flavio POGGIOLI](#report-labs--flavio-poggioli)
   - [Table of contents](#table-of-contents)
-  - [Nmap](#nmap)
 
-
-## VM n°207 
 
 Goal : find 8 vulnerabilities flags beginning by "FLAG{".
 
-### Find IP of the target
+## Find IP of the target
   
   ```bash
   $ sudo netdiscover -r 10.0.2.0/24
@@ -22,7 +19,7 @@ Our target is 10.0.2.4.
 
 The 2 first is VBox address (network and dhcp).
 
-### List all open ports
+## List all open ports
   
   ```bash
   $ sudo nmap -p- 10.0.2.4
@@ -42,7 +39,7 @@ Ports scanned : 21,22,80,9090,13337,22222,60000
 
 We can find the version of some services, and for services which return any version, we can see the data of the service.
 
-### Flag 1 - FLAG{THERE IS NO ZEUS, IN YOUR FACE!}
+## Flag 1 - FLAG{THERE IS NO ZEUS, IN YOUR FACE!}
 
 With the different ports scanned on previous step, we can try to connect to the services with different manners (ssh, telnet, http)...
 
@@ -54,7 +51,7 @@ The port 9090 is a web service, and we found a flag : FLAG{THERE IS NO ZEUS, IN 
 
 ![picture 6](../images/2e0080edc3cada760aadc48c3b7478ccf34f32abb33a57421f539f132b92138a.png)  
 
-### Flag 2 - FLAG:{TheyFoundMyBackDoorMorty}
+## Flag 2 - FLAG:{TheyFoundMyBackDoorMorty}
 
 With the browser, on port 13337, we can find a flag : FLAG:{TheyFoundMyBackDoorMorty}.
 
@@ -62,7 +59,7 @@ With the browser, on port 13337, we can find a flag : FLAG:{TheyFoundMyBackDoorM
 
 Nothing on other ports with the browser.
 
-### Flag 3 - FLAG{Yeah d- just don't do it.}
+## Flag 3 - FLAG{Yeah d- just don't do it.}
 
 For the port 80, which host a web server, we can dig to find a something in arborescence directory.
 
@@ -80,7 +77,7 @@ In this directory, we can find a file named FLAG.txt which contains : FLAG{Yeah 
 ![picture 14](../images/e779f9cb8b87ebded0217381553daa5eb022e2b370be5584cec4576514d14e2c.png)
 
 
-### Flag 4 - FLAG{Flip the pickle Morty!}
+## Flag 4 - FLAG{Flip the pickle Morty!}
 
 On the ports scanned, the data returned from 60000 port shows a reverse shell with his fingerprint. We can't do anything with it on browser, ssh, telnet, ftp... So we can use netcat to connect to the port and try to find something.
 
@@ -91,7 +88,7 @@ Through that, we can interact with a shell, and we can find a flag : FLAG{Flip t
 
 ![picture 11](../images/6b2f48934cc9126698ec9fa41c1378ecc38d360d856960742912407b2dd3bdfa.png)  
 
-### Flag 5 - FLAG{Whoa this is unexpected} 
+## Flag 5 - FLAG{Whoa this is unexpected} 
 
 For the port 21, a more precise analysis with nmap can show us that the ftp service is vulnerable to anonymous login.
 
@@ -107,7 +104,7 @@ I download FLAG.txt because we don't have any permission on ftp server to open i
 
 And we can discover a flag : FLAG{Whoa this is unexpected}.
 
-### Flag 6 - FLAG{Get off the high road Summer!}
+## Flag 6 - FLAG{Get off the high road Summer!}
 
 In password directory, there is also a file named "passwords.html". After an analysis, we can see in console that a password is hidden in the code.
 
@@ -139,7 +136,7 @@ The user is Summer (opposite to the password "winter") and we can connect to it.
 
 The command cat is alse printing a real cat so we can use the command "; less /home/Summer/FLAG.txt" to find a flag : FLAG{Get off the high road Summer!}.
 
-### Flag 7 - FLAG: {131333} 
+## Flag 7 - FLAG: {131333} 
 
 With a SSH access, we can access to Morty home directory.
 
@@ -170,7 +167,7 @@ But, the file is executable with the libary libmcrypt4.
 
 ![picture 29](../images/658477b4e15b978da7d89745627dc71b7df91f22716e670b6aee5af0284c565d.png)  
 
-### Flag 9 - FLAG secret 
+## Flag 9 - FLAG secret 
 I was also given a password hint for Rick’s password. A quick Google search found that the band name was “The Flesh Curtains”.
 
 So, I create a python script to create the possible password.
