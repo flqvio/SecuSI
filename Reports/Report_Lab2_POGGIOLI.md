@@ -117,3 +117,43 @@ LICENSE.txt has nothing special but misc has some interesting files.
 ```bash
 meterpreter > ls misc
 ```
+
+After a search, there is a file with different permissions and again, a different last modified date : tyrell.pass.
+
+![picture 13](../images/5704a953278b7be2d2a891c2c79651fcad584d335d10d0c56c82fd5cf8f89dd6.png)  
+
+We find a username and a password to use it on SSH connection.
+
+Now, we can list all users with the home directory.
+
+![picture 14](../images/9c948e7a0dd8dd17aa15f0c2a071822d3f37b9ce5be342bc983a6c4faf122103.png)  
+
+tyrell and ghost are empty but Elliot directory has a file named user.txt but we don't have the permission to read it.
+
+### 5. SSH connection
+
+Now that we have credentials :
+
+```bash
+Username: tyrell
+Password: mR_R0bo7_i5_R3@!_
+```
+
+We can try to connect with these credentials on SSH connection.
+
+![picture 15](../images/9cd3f862d06258f42786eaf807d826305bab2ca5b1478d1a5ebaa812705f6cf6.png)  
+
+But tyrell cannot do a "sudo bash" to get a root shell.
+
+![picture 16](../images/6838ea1c55cce90af94b36c33454b96ba54f4ee507afc2d8e9572c02f230c158.png)  
+
+To gain root access, I GTFOBins find a list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems.
+
+[journalctl](https://gtfobins.github.io/gtfobins/journalctl/) can be used to gain root access.
+
+```bash
+tyrell@vuln_cms:~$ sudo /bin/journalctl
+
+!/bin/sh
+```
+And with that, you have root access.
