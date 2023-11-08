@@ -9,7 +9,7 @@
 
 Goal : find the root Flag.
 
-### 1. Find IP address of the machjine
+### 1. Find IP address of the machine
 
 ```bash
 $ sudo netdiscover -r 10.0.2.0/24
@@ -147,7 +147,7 @@ But tyrell cannot do a "sudo bash" to get a root shell.
 
 ![picture 16](../images/6838ea1c55cce90af94b36c33454b96ba54f4ee507afc2d8e9572c02f230c158.png)  
 
-To gain root access, I GTFOBins find a list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems.
+To gain root access, I've used GTFOBins, list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems
 
 [journalctl](https://gtfobins.github.io/gtfobins/journalctl/) can be used to gain root access.
 
