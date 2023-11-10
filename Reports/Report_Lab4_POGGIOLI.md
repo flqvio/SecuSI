@@ -126,8 +126,18 @@ I click on it and i put a parameter `?cmd=whoami` and i wan see that our user is
 
 ![picture 0](../images/60bcd3b6359408132253728be3fdb92b687dbce32f6acce597c9958b94ab3ab3.png)  
 
-We have now a reverse shell and access to our target.
+## Another method
 
-
+With this script
 [Github source of php reverse shell script](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
+we can upload like the old script (rename it with .Php or php3 extension), upload it and execute it with the same method.
 
+Just insure that the IP address and the port are correct in the port (the kali machine and a random port 8080 for me)
+
+
+![picture 0](../images/51a333d98ef4de92a2c42585298ed0b9a896ae16fe0cc9b76cdb3317536e196a.png)  
+
+
+We can listen with `nc -v -n -l -p 8080`
+
+With that, we can access to a reverse shell with the user www-data.
