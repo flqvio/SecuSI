@@ -7,7 +7,7 @@
 
 ## VM n°207 
 
-Goal : find the root Flag.
+Goal : gain access with root.
 
 ### 1. Find IP address of the machine
 

