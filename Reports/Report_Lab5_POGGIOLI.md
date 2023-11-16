@@ -143,3 +143,5 @@ Now, the new wordlist can be used with Hydra.
 $ hydra -l thomas -P wordlist ssh://10.0.2.9 -t 4
 ```
 -l for login, -p for password list and -t for the tasks in parallel
+
+![picture 11](../images/11acfcee4f55d0311dee88d4f0aebe494cb71350f9230e1fc4a8b7cb954fc1be.png)  
